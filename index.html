@@ -3,72 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sarah's CV</title>
-    <style>
-      .site-icon {
-        display: inline-block;
-        height: 50px;
-      }
-    </style>
+    <link href="./tailwind_styles.css" rel="stylesheet" />
   </head>
 
-  <body>
-    <h1>Sarah Wood Curriculum Vitae</h1>
-    <img
-      src="./assets/images/Graduation2023-090.jpg"
-      height="200"
-      title="A photo of me at my graduation"
-      alt="A photo of me at my graduation"
-    />
+  <body class="bg-gray-800">
+    <h1 class="p-3 text-3xl font-bold text-white">
+      Sarah Wood | Curriculum Vitae
+    </h1>
+    <div
+      class="rounded-4xl bg-white/15 p-3 outline --outline-offset-1 outline-white/25"
+    >
+      <img
+        class="aspect-5/6 rounded-4xl bg-gray-800 object-cover shadow-2xl outline -outline-offset-1 outline-white/10"
+        src="./assets/images/Graduation2023-090.jpg"
+        height="200"
+        title="A photo of me at my graduation"
+        alt="A photo of me at my graduation"
+      />
+    </div>
 
-    <hr />
+    <hr class="invisible" />
 
-    <h2>Professional Summary</h2>
-    My time in QA has trained me to be extremely detail-oriented. I will use
-    this skill to produce top-quality code as a Software Developer. I am
-    passionate about solving problems with technology. I really enjoy working in
-    a team. Seeking out knowledge and continually improving my skills have been
-    integral to my success.
-    <h2>Education</h2>
-    Bachelor of Science Stellenbosch UniversityMathematical Sciences, Major in
-    Computer Science
-    <h2>Experience</h2>
-    <h2>Skills</h2>
-		<ul>
-			<li>JavaScript</li>
-			<li>Kotlin</li>
-			<li>React.js</li>
-		</ul>
-    <hr />
+    <h2 class="font-bold text-amber-200 pl-3 p-0.5">Professional Summary</h2>
+    <p class="text-amber-100 pl-3">
+      My time in QA has trained me to be extremely detail-oriented. I will use
+      this skill to produce top-quality code as a Software Developer. I am
+      passionate about solving problems with technology. I really enjoy working
+      in a team. Seeking out knowledge and continually improving my skills have
+      been integral to my success.
+    </p>
 
-    <h3>Contact Me</h3>
+    <h2 class="font-bold text-amber-200 pl-3 p-0.5">Education</h2>
+    <p class="text-amber-100 pl-3">
+      Bachelor of Science Mathematical Sciences, Major in Computer Science |
+      Stellenbosch University
+    </p>
+
+    <h2 class="font-bold text-amber-200 pl-3 p-0.5">Experience</h2>
+    <ul class="text-amber-100 pl-8 list-disc">
+      <li>TOWA Data Systems</li>
+      <li>AWS</li>
+      <li>AWS</li>
+    </ul>
+
+    <h2 class="font-bold text-amber-200 pl-3 p-0.5">Skills</h2>
+    <ul class="text-amber-100 pl-8 list-disc">
+      <li>JavaScript</li>
+      <li>Kotlin</li>
+      <li>React.js</li>
+    </ul>
+    <hr class="invisible" />
+
+    <h3 class="font-bold text-amber-200">Contact Me</h3>
     <a href="https://www.linkedin.com/in/sarah-wood-dev"
       ><img
-        class="site-icon"
+        class="site-icon p-1"
         src="./assets/images/LinkedinIcon.png"
         alt="LinkedIn Icon"
     /></a>
     <a href="https://github.com/sarahbwood">
       <img
-        class="site-icon"
+        class="site-icon p-1"
         src="./assets/images/GitHubIcon.png"
         alt="Github Icon"
     /></a>
-    <hr />
+    <hr class="invisible" />
   </body>
+  <app-root></app-root>
 
   <footer>
-    <div>
+    <div class="text-indigo-200">
       Icons made by
       <a
         href="https://www.flaticon.com/authors/pixel-perfect"
         title="Pixel perfect"
         >Pixel perfect</a
       >
-      from
-      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </div>
-    <div>
-      Icons made by
+      and
       <a href="https://www.flaticon.com/authors/riajulislam" title="riajulislam"
         >riajulislam</a
       >
