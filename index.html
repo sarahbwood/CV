@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sarah's CV</title>
-    <link href="./tailwind_styles.css" rel="stylesheet" />
+    <link href="./tailwind_style.css" rel="stylesheet" />
   </head>
 
   <body class="bg-gray-800">
@@ -11,10 +11,16 @@
       Sarah Wood | Curriculum Vitae
     </h1>
     <div
-      class="rounded-4xl bg-white/15 p-3 outline --outline-offset-1 outline-white/25"
+      class="rounded-(--card-radius) bg-white/15 p-(--card-padding) outline --outline-offset-1 outline-white/25 [--card-padding:--spacing(3)] [--card-radius:var(--radius-4xl)]"
     >
+      <!-- border radius of a nested item = parent border radius - parent padding -->
+      <!-- border radius of a nested item = 2rem - 0.75rem -->
+      <!-- border radius of a nested item = 1.25rem -->
+      <!-- hardcode - lame -->
+      <!-- use a calc expression -->
+
       <img
-        class="aspect-5/6 rounded-4xl bg-gray-800 object-cover shadow-2xl outline -outline-offset-1 outline-white/10"
+        class="aspect-5/6 rounded-[calc(var(--card-radius)-var(--card-padding))] bg-gray-800 object-cover shadow-2xl outline -outline-offset-1 outline-white/10"
         src="./assets/images/Graduation2023-090.jpg"
         height="200"
         title="A photo of me at my graduation"
@@ -54,25 +60,27 @@
     </ul>
     <hr class="invisible" />
 
-    <h3 class="font-bold text-amber-200">Contact Me</h3>
-    <a href="https://www.linkedin.com/in/sarah-wood-dev"
-      ><img
-        class="site-icon p-1"
-        src="./assets/images/LinkedinIcon.png"
-        alt="LinkedIn Icon"
-    /></a>
-    <a href="https://github.com/sarahbwood">
-      <img
-        class="site-icon p-1"
-        src="./assets/images/GitHubIcon.png"
-        alt="Github Icon"
-    /></a>
+    <h3 class="font-bold text-amber-200 pl-3">Contact Me</h3>
+    <div class="pl-3">
+      <a href="https://www.linkedin.com/in/sarah-wood-dev"
+        ><img
+          class="site-icon"
+          src="./assets/images/LinkedinIcon.png"
+          alt="LinkedIn Icon"
+      /></a>
+      <a href="https://github.com/sarahbwood">
+        <img
+          class="site-icon"
+          src="./assets/images/GitHubIcon.png"
+          alt="Github Icon"
+      /></a>
+    </div>
     <hr class="invisible" />
   </body>
   <app-root></app-root>
 
   <footer>
-    <div class="text-indigo-200">
+    <div class="text-indigo-200 pl-3">
       Icons made by
       <a
         href="https://www.flaticon.com/authors/pixel-perfect"

@@ -16,6 +16,7 @@
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-bold: 700;
+    --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -173,17 +174,48 @@
   .invisible {
     visibility: hidden;
   }
+  .table {
+    display: table;
+  }
   .aspect-5\/6 {
     aspect-ratio: 5/6;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .list-disc {
     list-style-type: disc;
   }
+  .rounded-\(--card-radius\) {
+    border-radius: var(--card-radius);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
   .rounded-4xl {
     border-radius: var(--radius-4xl);
   }
+  .rounded-\[calc\(var\(\(--card-radius\)-\(--card-padding\)\)\)\] {
+    border-radius: calc(var((--card-radius)-(--card-padding)));
+  }
+  .rounded-\[calc\(var\(--card-radius\)-var\(--card-padding\)\)\] {
+    border-radius: calc(var(--card-radius) - var(--card-padding));
+  }
+  .rounded-\[calc\(var\(--card-radius-\(--card-padding\)\)\)\] {
+    border-radius: calc(var(--card-radius-(--card-padding)));
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .bg-gray-800 {
     background-color: var(--color-gray-800);
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   .bg-white\/15 {
     background-color: color-mix(in srgb, #fff 15%, transparent);
@@ -194,11 +226,14 @@
   .object-cover {
     object-fit: cover;
   }
+  .p-\(--card-padding\) {
+    padding: var(--card-padding);
+  }
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
+  }
   .p-0\.5 {
     padding: calc(var(--spacing) * 0.5);
-  }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
@@ -229,6 +264,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -239,6 +277,9 @@
   }
   .-outline-offset-1 {
     outline-offset: calc(1px * -1);
+  }
+  .outline-white {
+    outline-color: var(--color-white);
   }
   .outline-white\/10 {
     outline-color: color-mix(in srgb, #fff 10%, transparent);
@@ -252,10 +293,24 @@
       outline-color: color-mix(in oklab, var(--color-white) 25%, transparent);
     }
   }
+  .\[--card-padding\:--spacing\(3\)\] {
+    --card-padding: calc(var(--spacing) * 3);
+  }
+  .\[--card-radius\:--radius-4xl\] {
+    --card-radius: --radius-4xl;
+  }
+  .\[--card-radius\:var\(--radius-4xl\)\] {
+    --card-radius: var(--radius-4xl);
+  }
 }
 .site-icon {
   display: inline-block;
   height: 55px;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -334,6 +389,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
