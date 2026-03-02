@@ -10,10 +10,7 @@
     --color-amber-100: oklch(96.2% 0.059 95.617);
     --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-amber-500: oklch(76.9% 0.188 70.08);
-    --color-cyan-500: oklch(71.5% 0.143 215.221);
     --color-indigo-200: oklch(87% 0.065 274.039);
-    --color-gray-50: oklch(98.5% 0.002 247.839);
-    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-white: #fff;
@@ -182,14 +179,59 @@
   .static {
     position: static;
   }
+  .m-0 {
+    margin: calc(var(--spacing) * 0);
+  }
+  .m-0\.5 {
+    margin: calc(var(--spacing) * 0.5);
+  }
   .m-2 {
     margin: calc(var(--spacing) * 2);
+  }
+  .m-3 {
+    margin: calc(var(--spacing) * 3);
   }
   .table {
     display: table;
   }
+  .aspect-2\/3 {
+    aspect-ratio: 2/3;
+  }
+  .aspect-4\/6 {
+    aspect-ratio: 4/6;
+  }
   .aspect-5\/6 {
     aspect-ratio: 5/6;
+  }
+  .h-\(--card-height\) {
+    height: var(--card-height);
+  }
+  .h-\[50dvh\] {
+    height: 50dvh;
+  }
+  .h-\[calc\(var\(--card-height\)\)\] {
+    height: calc(var(--card-height));
+  }
+  .h-\[calc\(var\(--card-height\)-\(var\(--card-padding\)\*2\)\)\] {
+    height: calc(var(--card-height) - (var(--card-padding) * 2));
+  }
+  .h-\[calc\(var\(--card-height\)-var\(--card-padding\)\)\] {
+    height: calc(var(--card-height) - var(--card-padding));
+  }
+  .h-\[calc\(var\(dvh\)-var\(--card-padding\)\)\] {
+    height: calc(var(dvh) - var(--card-padding));
+  }
+  .h-dvh {
+    height: 100dvh;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .w-\(--image-width\) {
+    width: var(--image-width);
+  }
+  .w-\[var\(--image-width\)\] {
+    width: var(--image-width);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -243,9 +285,6 @@
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
-  }
   .pl-3 {
     padding-left: calc(var(--spacing) * 3);
   }
@@ -269,12 +308,6 @@
   .text-amber-200 {
     color: var(--color-amber-200);
   }
-  .text-gray-50 {
-    color: var(--color-gray-50);
-  }
-  .text-gray-300 {
-    color: var(--color-gray-300);
-  }
   .text-gray-500 {
     color: var(--color-gray-500);
   }
@@ -292,22 +325,8 @@
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 50%)), 0 2px 4px -2px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 50%));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-md\/85 {
-    --tw-shadow-alpha: 85%;
-    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 85%)), 0 2px 4px -2px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 85%));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-md\/100 {
-    --tw-shadow-alpha: 100%;
-    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 100%)), 0 2px 4px -2px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 100%));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-2xs {
-    --tw-shadow: 0 1px var(--tw-shadow-color, rgb(0 0 0 / 0.05));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-md {
@@ -336,21 +355,20 @@
       outline-color: color-mix(in oklab, var(--color-white) 25%, transparent);
     }
   }
+  .\[--card-height\:50dvh\] {
+    --card-height: 50dvh;
+  }
+  .\[--card-height\:var\(50dvh\)\] {
+    --card-height: var(50dvh);
+  }
   .\[--card-padding\:--spacing\(3\)\] {
     --card-padding: calc(var(--spacing) * 3);
   }
   .\[--card-radius\:var\(--radius-4xl\)\] {
     --card-radius: var(--radius-4xl);
   }
-  .hover\:shadow-amber-500\/50 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-shadow-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 50%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-amber-500) 50%, transparent) var(--tw-shadow-alpha), transparent);
-        }
-      }
-    }
+  .\[--image-width\:w-auto\] {
+    --image-width: w-auto;
   }
   .hover\:shadow-amber-500\/60 {
     &:hover {
@@ -362,14 +380,14 @@
       }
     }
   }
-  .hover\:shadow-cyan-500\/50 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-shadow-color: color-mix(in srgb, oklch(71.5% 0.143 215.221) 50%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-cyan-500) 50%, transparent) var(--tw-shadow-alpha), transparent);
-        }
-      }
+  .md\:h-\(--card-height\) {
+    @media (width >= 48rem) {
+      height: var(--card-height);
+    }
+  }
+  .md\:h-\[calc\(var\(--card-height\)-\(var\(--card-padding\)\*2\)\)\] {
+    @media (width >= 48rem) {
+      height: calc(var(--card-height) - (var(--card-padding) * 2));
     }
   }
 }

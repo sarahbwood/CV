@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sarah's CV</title>
     <link href="./tailwind_style.css" rel="stylesheet" />
   </head>
 
   <body class="bg-gray-800">
-    <h1 class="p-3 text-3xl font-bold text-white">
+    <h1 class="m-0.5 p-3 text-3xl font-bold text-white">
       Sarah Wood | Curriculum Vitae
     </h1>
     <div
-      class="rounded-(--card-radius) bg-white/15 p-(--card-padding) outline --outline-offset-1 outline-white/25 [--card-padding:--spacing(3)] [--card-radius:var(--radius-4xl)]"
+      class="h-full md:h-(--card-height) aspect-2/3 rounded-(--card-radius) bg-white/15 m-3 p-(--card-padding) outline --outline-offset-1 outline-white/25 [--card-padding:--spacing(3)] [--card-radius:var(--radius-4xl)] [--card-height:50dvh]"
     >
       <!-- border radius of a nested item = parent border radius - parent padding -->
       <!-- border radius of a nested item = 2rem - 0.75rem -->
@@ -20,9 +20,8 @@
       <!-- use a calc expression -->
 
       <img
-        class="aspect-5/6 rounded-[calc(var(--card-radius)-var(--card-padding))] bg-gray-800 object-cover shadow-2xl outline -outline-offset-1 outline-white/10"
+        class="h-full md:h-[calc(var(--card-height)-(var(--card-padding)*2))] rounded-[calc(var(--card-radius)-var(--card-padding))] bg-gray-800 object-cover shadow-2xl outline -outline-offset-1 outline-white/10"
         src="./assets/images/Graduation2023-090.jpg"
-        height="500"
         title="A photo of me at my graduation"
         alt="A photo of me at my graduation"
       />
