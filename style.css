@@ -4,3 +4,8 @@
   display: inline-block;
   height: 55px;
 }
+
+@theme {
+  --color-beige: #f7d6bc;
+  --color-tawny: #c49d7e;
+}
